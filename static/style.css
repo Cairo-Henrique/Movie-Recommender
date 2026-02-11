@@ -1,0 +1,124 @@
+/* Fonte moderna e reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: #f4f6fa;
+  color: #333;
+  padding: 40px;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+  color: #2b2f77;
+  font-weight: 800;
+}
+
+/* Container da descrição */
+#enviar_descricao {
+  background: white;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#enviar_descricao p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+#enviar_descricao input {
+  width: 70%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#enviar_descricao input:focus {
+  outline: none;
+  border: 1px solid #2b2f77;
+}
+
+#enviar_descricao button {
+  padding: 10px 18px;
+  margin-left: 10px;
+  border: none;
+  background: #2b2f77;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#enviar_descricao button:hover {
+  background: #1f2258;
+}
+
+/* Seção das recomendações */
+#recomendacoes {
+  background: white;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#recomendacoes > p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Remove estilo padrão da lista */
+#recomendacoes ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Card de cada filme */
+#recomendacoes li {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2b2f77;
+  border-left: 6px solid #2b2f77;
+}
+
+/* Overview dentro do card */
+#recomendacoes li + p,
+#recomendacoes li p,
+#recomendacoes p {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+  color: #444;
+}
+
+/* Para garantir que o overview fique “dentro” do card */
+#recomendacoes li + p {
+  margin-top: -10px;
+  margin-bottom: 15px;
+  background: #f7f8fc;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
