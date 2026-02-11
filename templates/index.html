@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Movie Recommender</title>
+</head>
+
+<body>
+  <h1>
+    Movie Recommender
+  </h1>
+  <div id="enviar_descricao">
+    <p>Describe the movie you are looking for</p>
+
+    <!-- FORM PARA ENVIAR A DESCRIÇÃO -->
+    <form method="POST">
+      <input type="text" name="description" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+{% if results %}
+  <div id="recomendacoes">
+    <p>Movies most similar to your description:</p>
+    <ol>
+      {% for title, overview in results %}
+        <li>{{ title }}</li>
+        <p>{{ overview }}</p>
+      {% endfor %}
+    </ol>
+  </div>
+{% endif %}
+
+</body>
+
+</html>
