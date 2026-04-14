@@ -47,7 +47,7 @@ The engine utilizes a weighted linear combination to determine the final similar
    cd Movie-Recommender
    ```
 2. Install the required dependencies
-3. Generate the embedding database (if not present):
+3. Generate the embedding database:
    * Open `movies_embeddings_creation.ipynb` and execute the cells to generate the `.pkl` file containing the vectors.
 4. Launch the application:
    ```bash
