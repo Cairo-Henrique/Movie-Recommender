@@ -2,6 +2,8 @@
 
 This project is a content-based movie recommendation system that utilizes Natural Language Processing to suggest films based on the semantic meaning of user descriptions. Unlike keyword-based search engines, this system employs deep learning embeddings to understand the context and themes provided in a text prompt.
 
+![Screenshot of the site as seen by the user](assets/site_screenshot.png)
+
 ## Project Overview
 
 The core of the application relies on converting movie metadata into high-dimensional vectors. By calculating the Cosine Similarity between a user's input and a pre-processed database of films, the engine identifies movies with the highest thematic relevance. The system is designed with a Flask backend and a modern, responsive web interface.
