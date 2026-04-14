@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from Movies.functions import get_embedding, recommend_movies, movies
+from app_functions import get_embedding, recommend_movies, movies
 
 app = Flask(__name__, template_folder='templates')
 
