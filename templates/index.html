@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
   <title>Movie Recommender</title>
 </head>
 
@@ -17,8 +18,14 @@
 
     <!-- FORM PARA ENVIAR A DESCRIÇÃO -->
     <form method="POST">
-      <input type="text" name="description" />
-      <button type="submit">Send</button>
+      <div class="form-row">
+        <label class="top-n-box">
+          <span>Number of movies</span>
+          <input type="number" name="top_n" min="1" value="10" />
+        </label>
+        <input type="text" name="description" placeholder="Type a movie description..." />
+        <button type="submit">Send</button>
+      </div>
     </form>
   </div>
 
@@ -27,12 +34,58 @@
     <p>Movies most similar to your description:</p>
     <ol>
       {% for title, overview in results %}
-        <li>{{ title }}</li>
+        <li>
+          <a href="https://www.google.com/search?q={{ title }} movie" target="_blank" rel="noopener noreferrer">
+            {{ title }}
+          </a>
+        </li>
         <p>{{ overview }}</p>
       {% endfor %}
     </ol>
   </div>
 {% endif %}
+
+<!-- Popcorn particle effect script -->
+<script>
+  // Select the "Send" button inside your form
+  const btn = document.querySelector('#enviar_descricao button');
+
+  btn.addEventListener('click', function(e) {
+    // Generate 5 pieces of popcorn per click!
+    for (let i = 0; i < 5; i++) {
+      createPopcorn(e.clientX, e.clientY);
+    }
+  });
+
+  function createPopcorn(x, y) {
+    // 1. Create the emoji element
+    const popcorn = document.createElement('div');
+    popcorn.classList.add('popcorn-particle');
+    popcorn.textContent = '🍿';
+
+    // 2. Calculate random flight paths (tx, ty) and rotation (rot)
+    const tx = (Math.random() - 0.5) * 150 + 'px'; // Random X spread
+    const ty = (Math.random() - 1) * 150 + 'px';   // Random Y spread (mostly upwards)
+    const rot = (Math.random() - 0.5) * 180 + 'deg'; // Random spin
+
+    // 3. Inject these random values into the CSS variables we created
+    popcorn.style.setProperty('--tx', tx);
+    popcorn.style.setProperty('--ty', ty);
+    popcorn.style.setProperty('--rot', rot);
+    
+    // 4. Place it exactly where the user clicked
+    popcorn.style.left = x + 'px';
+    popcorn.style.top = y + 'px';
+
+    // 5. Add it to the screen
+    document.body.appendChild(popcorn);
+
+    // 6. Clean up: Remove the element after the animation finishes (800ms)
+    setTimeout(() => {
+      popcorn.remove();
+    }, 800);
+  }
+</script>
 
 </body>
 
