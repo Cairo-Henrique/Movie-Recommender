@@ -6,6 +6,10 @@ This project is a content-based movie recommendation system that utilizes Natura
 
 The core of the application relies on converting movie metadata into high-dimensional vectors. By calculating the Cosine Similarity between a user's input and a pre-processed database of films, the engine identifies movies with the highest thematic relevance. The system is designed with a Flask backend and a modern, responsive web interface.
 
+## Dataset
+
+The project utilizes the **TMDB 10,000 Movies Dataset (Updated 2022)**. This dataset provides comprehensive metadata for approximately 10,000 films, including the specific fields required for both the recommendation logic and the user interface.
+
 ## Methodology
 
 The recommendation logic is divided into two primary phases:
